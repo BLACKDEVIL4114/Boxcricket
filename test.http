@@ -1,0 +1,86 @@
+### Test Server
+GET http://localhost:3000
+
+### Create Team 1
+POST http://localhost:3000/api/teams
+Content-Type: application/json
+
+{
+    "name": "Rajasthan Royals",
+    "matches_played": 0,
+    "matches_won": 0,
+    "captain": "Sanju Samson",
+    "players": ["Sanju Samson", "Jos Buttler", "Yashasvi Jaiswal"]
+}
+
+### Create Team 2
+POST http://localhost:3000/api/teams
+Content-Type: application/json
+
+{
+    "name": "Gujarat Giants",
+    "matches_played": 0,
+    "matches_won": 0,
+    "captain": "Hardik Pandya",
+    "players": ["Hardik Pandya", "Shubman Gill", "Rashid Khan"]
+}
+
+### Get Teams
+GET http://localhost:3000/api/teams
+
+### Create Match
+POST http://localhost:3000/api/matches
+Content-Type: application/json
+
+{
+    "team1": "6425a1b3c7d8e9f0a1b2c3d4",
+    "team2": "6425a1b3c7d8e9f0a1b2c3d5",
+    "tournament_id": "6425a1b3c7d8e9f0a1b2c3d6",
+    "match_date": "2024-04-16T14:00:00.000Z",
+    "venue": "Central Ground"
+}
+
+### Get All Matches
+GET http://localhost:3000/api/matches
+
+### Update Match Score
+PUT http://localhost:3000/api/matches/1/score
+Content-Type: application/json
+
+{
+    "score_team1": 150,
+    "score_team2": 145
+}
+
+### Get Updated Teams
+GET http://localhost:3000/api/teams
+
+### User Signup
+POST http://localhost:3000/api/users/signup
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "password123"
+}
+
+### User Login
+POST http://localhost:3000/api/users/signin
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "password123"
+}
+
+### Create Tournament
+POST http://localhost:3000/api/tournaments
+Content-Type: application/json
+
+{
+    "name": "Box Cricket League 2024",
+    "startDate": "2024-04-15",
+    "endDate": "2024-05-15",
+    "maxTeams": 8
+}
